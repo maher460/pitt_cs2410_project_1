@@ -1,6 +1,3 @@
-
-
-
 public class Simulator
 {
 	private int cycle;
@@ -35,6 +32,14 @@ public class Simulator
 		Simulator simulator = new Simulator();
 		simulator.setInstructionReader(instructions_reader);
 		simulator.run();
+
+		// Print Registers
+		
+
+		// Print Data Memory
+		
+
+		// Print cycle count and other information
 
 		System.out.println("Done running simulator!");
 	}
