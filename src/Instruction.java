@@ -1,5 +1,9 @@
+/*
+	Instruction
 
+	Author: Maher Khan
 
+ */
 
 public class Instruction
 {
@@ -9,6 +13,18 @@ public class Instruction
 	private int source_reg2;
 	private int dest_reg;
 	private int immediate;
+	private int target;
+
+	public Instruction()
+	{
+		this.address = -1;
+		this.opcode = "";
+		this.source_reg1 = -1;
+		this.source_reg2 = -1;
+		this.dest_reg = -1;
+		this.immediate = -1;
+		this.target = -1;
+	}
 
 	// Getter
 	public int getAddess() 
@@ -74,5 +90,29 @@ public class Instruction
 	// Setter
 	public void setImmediate(int immediate) {
 		this.immediate = immediate;
+	}
+
+	// Getter
+	public int getTarget() 
+	{
+		return this.target;
+	}
+
+	// Setter
+	public void setTarget(int target) {
+		this.target = target;
+	}
+
+	public String toString()
+	{
+		String result = "";
+		result += "Instruction Address: " + Integer.toString(this.address) +"\n";
+		result += "opcode: " + this.opcode +"\n";
+		result += "source_reg1: " + Integer.toString(this.source_reg1) +"\n";
+		result += "source_reg2: " + Integer.toString(this.source_reg2) +"\n";
+		result += "dest_reg: " + Integer.toString(this.dest_reg) +"\n";
+		result += "immediate: " + Integer.toString(this.immediate) +"\n";
+		result += "target: " + Integer.toString(this.target) +"\n";
+		return result;
 	}
 }
