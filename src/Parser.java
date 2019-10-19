@@ -61,127 +61,127 @@ public class Parser
 
 					if (instruction.getOpcode().equals("add"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("sub"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("addi"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("subi"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("mul"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fadd"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fsub"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fmul"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fdiv"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("ld"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("sd"))
 					{
-						instruction.setSourceReg1(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
-						instruction.setDestReg(Integer.parseInt(splitted[1].split("\\(")[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fld"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("fsd"))
 					{
-						instruction.setSourceReg1(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
-						instruction.setDestReg(Integer.parseInt(splitted[1].split("\\(")[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("and"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("or"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("andi"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("ori"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("slt"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
-						instruction.setSourceReg2(Integer.parseInt(splitted[2].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
+						instruction.setSourceReg2(Integer.parseInt(splitted[2].substring(1)));
 					}
 					else if (instruction.getOpcode().equals("slti"))
 					{
-						instruction.setDestReg(Integer.parseInt(splitted[0].split("")[1]));
-						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("")[1]));
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("beq"))
 					{
-						instruction.setSourceReg1(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].replace("$", "")));
 						instruction.setTarget(labels.get(splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("bne"))
 					{
-						instruction.setSourceReg1(Integer.parseInt(splitted[0].split("")[1]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].replace("$", "")));
 						instruction.setTarget(labels.get(splitted[2]));
 					}
