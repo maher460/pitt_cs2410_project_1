@@ -1,0 +1,26 @@
+fld F1, 116(R0)
+fld F2, 120(R0)
+fld F3, 124(R0)
+fld F4, 128(R0)
+fld F5, 132(R0)
+fadd F10, F1, F2
+fsub F11, F10, F3
+fmul F12, F11, F4
+fmul F13, F2, F3
+fdiv F14, F4, F2
+fsd F10, 136(R0)
+fsd F11, 140(R0)
+fsd F12, 144(R0)
+fsd F13, 148(R0)
+fsd F14, 152(R0)
+DATA
+Mem(116) = 1.0
+Mem(120) = 2.0
+Mem(124) = 3.0
+Mem(128) = 4.0
+Mem(132) = 5.0
+Mem(136) = 1.0
+Mem(140) = 2.0
+Mem(144) = 3.0
+Mem(148) = 4.0
+Mem(152) = 5.0

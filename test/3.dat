@@ -1,0 +1,3 @@
+ori R1, R0, -20
+L1: addi R1, R1, 1
+bne R1, $0, L1
