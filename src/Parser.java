@@ -20,6 +20,7 @@ public class Parser
 	{
 
 		HashMap<String, Integer> labels = new HashMap<String, Integer>();
+		ArrayList<Tuple> branches = new ArrayList<Tuple>();
 
 		Boolean data_start = false;
 		int instructionCacheBaseAddress = 1000;
@@ -119,7 +120,19 @@ public class Parser
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
 						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
 					}
+					else if (instruction.getOpcode().equals("lw"))
+					{
+						instruction.setDestReg(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
+						instruction.setSourceReg1(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
+					}
 					else if (instruction.getOpcode().equals("sd"))
+					{
+						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
+						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
+						instruction.setDestReg(Integer.parseInt(splitted[1].split("\\(")[1].split("\\)")[0].substring(1)));
+					}
+					else if (instruction.getOpcode().equals("sw"))
 					{
 						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].split("\\(")[0]));
@@ -177,13 +190,13 @@ public class Parser
 					{
 						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].replace("$", "")));
-						instruction.setTarget(labels.get(splitted[2]));
+						branches.add(new Tuple(instruction.getAddess(), splitted[2]));
 					}
 					else if (instruction.getOpcode().equals("bne"))
 					{
 						instruction.setSourceReg1(Integer.parseInt(splitted[0].substring(1)));
 						instruction.setImmediate(Integer.parseInt(splitted[1].replace("$", "")));
-						instruction.setTarget(labels.get(splitted[2]));
+						branches.add(new Tuple(instruction.getAddess(), splitted[2]));
 					}
 
 					else
@@ -218,6 +231,12 @@ public class Parser
 			}
 
 			scanner.close();
+
+			for(Tuple b: branches)
+			{
+				Instruction instruction = instruction_cache.findInstruction(b.address);
+				instruction.setTarget(labels.get(b.label));
+			}
 		} 
 		catch (FileNotFoundException e) 
 		{
@@ -225,4 +244,16 @@ public class Parser
 		}
 	}
 
+	private static class Tuple
+	{
+		public int address;
+		public String label;
+		public Tuple(int address, String label)
+		{
+			this.address = address;
+			this.label = label;
+		}
+	}
+
 }
+
