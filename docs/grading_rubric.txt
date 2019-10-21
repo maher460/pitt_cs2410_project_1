@@ -1,0 +1,16 @@
+TOTAL: 100
+ 
+Design Checkpoint: 5
+Demo Checkpoint: 5
+Correct submission, code style and input arguments: 10
+Part 1: 40
+                (Design – 10,
+                Functional – 20,
+                Timing – 10)
+Part 2: 20
+                (Design – 5,
+                Functional – 10,
+                Timing – 5)
+Report: 20
+                (Assumption and System Model - 10,
+                Comparative Analysis - 10)
