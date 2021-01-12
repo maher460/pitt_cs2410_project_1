@@ -1,3 +1,5 @@
+The following is an example Readme file. Please fill this up (you can modify the sections however you want) and include it in your final submission. Also, try to be as detailed and organized as possible.
+
 # CS 2410 Project 1
 
 One Paragraph of project description goes here
